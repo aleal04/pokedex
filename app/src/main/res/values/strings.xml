@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Pokedex</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_entrenador">Entrenador</string>
+    <string name="radioButton_entrenador">Entrenador</string>
+    <string name="radioButton_entrenadora">Entrenadora</string>
+    <string name="button_Ingresar">Ingresar</string>
+    <string name="content_image_female">ImageFemalePokeTrainer</string>
+    <string name="content_image_male">ImageMalePokeTrainer</string>
+    <string name="content_image_pokemon">ImagePokemon</string>
+    <string name="menu_favorites">FAVORITOS</string>
+    <string name="menu_recents">RECIENTESS</string>
+    <string name="menu_all">TODOS</string>
+    <string name="content_descriptipn_poke_img">PokeImagen</string>
+</resources>
