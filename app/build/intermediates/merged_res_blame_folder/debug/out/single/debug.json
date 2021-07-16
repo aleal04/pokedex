@@ -1,0 +1,130 @@
+[
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_female.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\drawable-v24\\female.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_pokecenter.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\drawable-v24\\pokecenter.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_favorite_cell.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\item_favorite_cell.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_favorites.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\fragment_favorites.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\navigation_manage_nav_graph.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\navigation\\manage_nav_graph.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_pokemon_detail.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\fragment_pokemon_detail.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_all_cell.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\item_all_cell.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_manage.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\fragment_manage.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_recent_cell.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\item_recent_cell.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_pokemon.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\drawable-v24\\pokemon.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_recents.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\fragment_recents.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_all.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\fragment_all.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_male.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\drawable-v24\\male.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_trainer.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\fragment_trainer.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pokemon_backgroun_gradient.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\drawable\\pokemon_backgroun_gradient.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\navigation_login_nav_graph.xml.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\navigation\\login_nav_graph.xml"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    }
+]

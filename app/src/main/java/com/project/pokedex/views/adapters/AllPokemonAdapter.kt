@@ -7,28 +7,31 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.project.pokedex.R
-import com.project.pokedex.views.models.AllPokemon
+import com.project.pokedex.network.models.PokeResult
+import com.squareup.picasso.Picasso
 
-class AllPokemonAdapter: RecyclerView.Adapter<AllPokemonAdapter.AllPokemonViewHolder>() {
 
-    var pokeAllList: List<AllPokemon> = emptyList()
-        set(value){
-            field = value
-            notifyDataSetChanged()
-        }
+class AllPokemonAdapter(val onPokemonClicked: ((PokeResult) -> (Unit))? = null): RecyclerView.Adapter<AllPokemonAdapter.AllPokemonViewHolder>() {
+
+    var pokeAllList: List<PokeResult> = emptyList()
+
+    fun setData(list: List<PokeResult>){
+        pokeAllList = list
+        notifyDataSetChanged()
+    }
 
 
     inner class AllPokemonViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private var namePokeTextView: TextView = itemView.findViewById(R.id.textViewCellPokeNameAll)
-        private var typePokeTextView: TextView = itemView.findViewById(R.id.textViewCellPokeDescAll)
         private var imageViewPoke : ImageView = itemView.findViewById(R.id.imageViewCellPokeAll)
+        private var numberPokeTextView : TextView = itemView.findViewById(R.id.textViewCellPokeNumberAll)
 
 
-        fun bind(model: AllPokemon){
-            namePokeTextView.text = model.name
-            typePokeTextView.text = model.Type
-            //
-
+        fun bind(model: PokeResult){
+            namePokeTextView.text = model.name.replaceFirstChar { it.uppercase() }
+            numberPokeTextView.text = "N.° " + String.format("%04d", model.number);
+            itemView.setOnClickListener{onPokemonClicked?.invoke(model)}
+            Picasso.get().load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + model.number +".png").into(imageViewPoke)
         }
     }
 

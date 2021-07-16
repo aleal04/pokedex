@@ -9,15 +9,28 @@
         android:id="@+id/favoritesFragment"
         android:name="com.project.pokedex.views.fragments.FavoritesFragment"
         android:label="@string/menu_favorites"
-        tools:layout="@layout/fragment_favorites" />
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_pokemonDetailFragment"
+            app:destination="@id/pokemonDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/recentsFragment"
         android:name="com.project.pokedex.views.fragments.RecentsFragment"
         android:label="@string/menu_recents"
-        tools:layout="@layout/fragment_recents" />
+        tools:layout="@layout/fragment_recents" >
+        <action
+            android:id="@+id/action_recentsFragment_to_pokemonDetailFragment"
+            app:destination="@id/pokemonDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/allFragment"
         android:name="com.project.pokedex.views.fragments.AllFragment"
         android:label="@string/menu_all"
         tools:layout="@layout/fragment_all" />
+    <fragment
+        android:id="@+id/pokemonDetailFragment"
+        android:name="com.project.pokedex.views.fragments.PokemonDetailFragment"
+        android:label="fragment_pokemon_detail"
+        tools:layout="@layout/fragment_pokemon_detail" />
 </navigation>

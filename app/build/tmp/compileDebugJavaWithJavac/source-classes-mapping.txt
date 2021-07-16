@@ -1,0 +1,16 @@
+com/project/pokedex/BuildConfig.java
+ com.project.pokedex.BuildConfig
+com/project/pokedex/views/fragments/RecentsFragmentDirections.java
+ com.project.pokedex.views.fragments.RecentsFragmentDirections
+com/project/pokedex/views/fragments/FavoritesFragmentDirections.java
+ com.project.pokedex.views.fragments.FavoritesFragmentDirections
+com/project/pokedex/views/fragments/AllFragmentDirections.java
+ com.project.pokedex.views.fragments.AllFragmentDirections
+ com.project.pokedex.views.fragments.AllFragmentDirections$1
+ com.project.pokedex.views.fragments.AllFragmentDirections$ActionAllFragment2ToPokemonDetailFragment2
+com/project/pokedex/views/fragments/PokemonDetailFragmentArgs.java
+ com.project.pokedex.views.fragments.PokemonDetailFragmentArgs
+ com.project.pokedex.views.fragments.PokemonDetailFragmentArgs$1
+ com.project.pokedex.views.fragments.PokemonDetailFragmentArgs$Builder
+com/project/pokedex/views/fragments/TrainerFragmentDirections.java
+ com.project.pokedex.views.fragments.TrainerFragmentDirections

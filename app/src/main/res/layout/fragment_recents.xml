@@ -10,6 +10,7 @@
         android:id="@+id/recyclerViewRecent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:listitem="@layout/item_recent_cell"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_recent_cell"/>
+        tools:itemCount="3"/>
 </FrameLayout>

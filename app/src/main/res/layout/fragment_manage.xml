@@ -9,13 +9,25 @@
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/red_pokedex"
+        app:itemTextColor="@color/yellow_poke_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu"
-        android:background="@color/red_pokedex"
-        app:itemTextColor="@color/yellow_poke_button"/>
+        app:menu="@menu/bottom_nav_menu" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navHostManageFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/manage_nav_graph" />
 </androidx.constraintlayout.widget.ConstraintLayout>

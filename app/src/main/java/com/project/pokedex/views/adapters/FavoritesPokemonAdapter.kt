@@ -26,8 +26,6 @@ class FavoritesPokemonAdapter: RecyclerView.Adapter<FavoritesPokemonAdapter.Favo
 
         fun bind(model: FavoritesPokemon){
             namePokeTextView.text = model.name
-            typePokeTextView.text = model.Type
-            //
 
         }
     }

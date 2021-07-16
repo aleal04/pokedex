@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
     <ImageView
         android:id="@+id/imageViewCellPokeAll"
         android:layout_width="80dp"
@@ -16,26 +17,28 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textViewCellPokeNameAll"
+        android:id="@+id/textViewCellPokeNumberAll"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
-        tools:text="Poke Nombre"
-        app:layout_constraintBottom_toTopOf="@+id/textViewCellPokeDescAll"
+        tools:text="0001"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageViewCellPokeAll"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imageViewCellPokeAll" />
 
     <TextView
-        android:id="@+id/textViewCellPokeDescAll"
+        android:id="@+id/textViewCellPokeNameAll"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="Poke Tipo"
+        tools:text="Bulbasaur"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textViewCellPokeNameAll"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/textViewCellPokeNameAll"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCellPokeNameAll" />
+        app:layout_constraintEnd_toEndOf="@+id/textViewCellPokeNumberAll"
+        app:layout_constraintStart_toStartOf="@+id/textViewCellPokeNumberAll"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCellPokeNumberAll" />
 </androidx.constraintlayout.widget.ConstraintLayout>
