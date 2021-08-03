@@ -10,7 +10,7 @@ public class TrainerFragmentDirections {
   }
 
   @NonNull
-  public static NavDirections actionTrainerFragmentToManageFragment() {
-    return new ActionOnlyNavDirections(R.id.action_trainerFragment_to_manageFragment);
+  public static NavDirections actionTrainerFragmentToHomePokemonFragment() {
+    return new ActionOnlyNavDirections(R.id.action_trainerFragment_to_homePokemonFragment);
   }
 }

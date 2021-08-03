@@ -1,29 +1,179 @@
 package com.project.pokedex.views.fragments
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.TextView
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import com.project.pokedex.R
-
+import com.project.pokedex.databinding.FragmentPokemonDetailBinding
 import com.project.pokedex.viewmodels.PokemonInfoViewModel
+import com.project.pokedex.viewmodels.StorePokemonFavoriteViewModel
+import com.project.pokedex.viewmodels.StorePokemonRecentViewModel
+import com.project.pokedex.views.adapters.PokemonDetailAdapter
+import com.project.pokedex.views.adapters.PokemonDetailStatsAdapter
 
 class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail){
-
+    /*Safe Args*/
     private val args: PokemonDetailFragmentArgs by navArgs()
+    /*Adapter*/
+    private val adapter = PokemonDetailAdapter()
+    private val adapterStat = PokemonDetailStatsAdapter()
+    /*View Model*/
+    private lateinit var viewModel: PokemonInfoViewModel
+    private lateinit var viewModelRecent : StorePokemonRecentViewModel
+    private lateinit var viewModelFavorite : StorePokemonFavoriteViewModel
+    /*Recycler View*/
+    private lateinit var abilitiesRecyclerView: RecyclerView
+    private lateinit var statsRecyclerView: RecyclerView
+    /*View Binding*/
+    private var _binding: FragmentPokemonDetailBinding? = null
+    private val binding get() = _binding!!
 
-    private lateinit var auxTextVIew: TextView
+    private lateinit var sharedPref: SharedPreferences
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE)
+        viewModel = ViewModelProvider(this).get(PokemonInfoViewModel::class.java)
+        viewModelRecent = ViewModelProvider(this).get(StorePokemonRecentViewModel::class.java)
+        viewModelFavorite = ViewModelProvider(this).get(StorePokemonFavoriteViewModel::class.java)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentPokemonDetailBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val pokeTrainer = sharedPref.getString("TRAINER_NAME", "") ?: ""
 
-        auxTextVIew = view.findViewById(R.id.auxtextView)
-        auxTextVIew.text = args.pokemonSelected.name
+        viewModel.getPokemonDetail(args.pokemonSelected.number)
 
+        //abilitiesRecyclerView = view.findViewById(R.id.recyclerViewAbilities)
+        //abilitiesRecyclerView.adapter = adapter
+
+        statsRecyclerView = view.findViewById(R.id.recyclerViewStats)
+        statsRecyclerView.adapter = adapterStat
+
+        viewModel.pokemonInfo.observe(viewLifecycleOwner) { list ->
+            adapter.setData(list.abilities)
+            adapterStat.setData(list.stats)
+        }
+
+        viewModel.pokemonInfo.observe(viewLifecycleOwner, { pokemon->
+            binding.textViewPokeDetailHeight.text = "${pokemon.height/10.0} m"
+            binding.textViewPokeDetailWeight.text =  "${pokemon.weight/10.0} kg"
+            binding.textViewPokeDetailName.text = pokemon.name.replaceFirstChar { it.uppercase() }
+            Glide.with(this).load(pokemon.sprites.front_default).into(binding.imageViewPokeDetailSprite)
+            binding.textViewPokeDetailType1.text = pokemon.types[0].type.name.replaceFirstChar { it.uppercase() }
+
+            //binding.textViewPokeDetailNumber.text = "# " + String.format("%04d", pokemon.id);
+            //SetBackGroundColorByType(pokemon.types[0].type.name.replaceFirstChar { it.uppercase() })
+
+            if(pokemon.types.size > 1){
+                binding.textViewPokeDetailType2.visibility = View.VISIBLE
+                binding.textViewPokeDetailType2.text = pokemon.types[1].type.name.replaceFirstChar { it.uppercase() }
+            }
+            else{
+                binding.textViewPokeDetailType2.visibility = View.GONE
+            }
+
+            binding.iamgeButtonAddFavorite.setOnClickListener{
+                viewModelFavorite.insert(pokemon.id , pokemon.name , pokeTrainer)
+                binding.iamgeButtonAddFavorite.setImageResource(R.drawable.star_on)
+
+                val snackbar: Snackbar = Snackbar.make(view, requireContext().getString(R.string.pokemon_add_favorites), Snackbar.LENGTH_LONG);
+                snackbar.setAnchorView(view.findViewById(R.id.pokeBottomNavigationView))
+                snackbar.show()
+            }
+
+            viewModelRecent.insert(pokemon.id , pokemon.name , pokeTrainer)
+        })
+
+        viewModel.isLoading.observe(viewLifecycleOwner){
+            binding.progressBarLoading.visibility = if(it) View.VISIBLE else View.GONE
+        }
+
+        viewModel.serverError.observe(viewLifecycleOwner){
+            Snackbar.make(view, requireContext().getString(R.string.server_error_message), Snackbar.LENGTH_LONG).show()
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 
-
+    /*
+    fun SetBackGroundColorByType(type: String = "Fire"){
+        if(type == "Fire"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#EA7A3C"))
+        }
+        else if(type == "Water"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#539AE2"))
+        }
+        else if(type == "Steel"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#539AE2"))
+        }
+        else if(type == "Rock"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#B2A061"))
+        }
+        else if(type == "Psychic"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#E5709B"))
+        }
+        else if(type == "Poison"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#B468B7"))
+        }
+        else if(type == "Normal"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#AAB09F"))
+        }
+        else if(type == "Ice"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#70CBD4"))
+        }
+        else if(type == "Ground"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#CC9F4F"))
+        }
+        else if(type == "Grass"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#71C558"))
+        }
+        else if(type == "Ghost"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#846AB6"))
+        }
+        else if(type == "Flying"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#7DA6DE"))
+        }
+        else if(type == "Fighting"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#CB5F48"))
+        }
+        else if(type == "Fairy"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#E397D1"))
+        }
+        else if(type == "Electric"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#E5C531"))
+        }
+        else if(type == "Dragon"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#6A7BAF"))
+        }
+        else if(type == "Dark"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#736C75"))
+        }
+        else if(type == "Bug"){
+            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#94BC4A"))
+        }
+    }*/
 }

@@ -20,7 +20,6 @@ class AllPokemonAdapter(val onPokemonClicked: ((PokeResult) -> (Unit))? = null):
         notifyDataSetChanged()
     }
 
-
     inner class AllPokemonViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private var namePokeTextView: TextView = itemView.findViewById(R.id.textViewCellPokeNameAll)
         private var imageViewPoke : ImageView = itemView.findViewById(R.id.imageViewCellPokeAll)
@@ -30,8 +29,12 @@ class AllPokemonAdapter(val onPokemonClicked: ((PokeResult) -> (Unit))? = null):
         fun bind(model: PokeResult){
             namePokeTextView.text = model.name.replaceFirstChar { it.uppercase() }
             numberPokeTextView.text = "N.° " + String.format("%04d", model.number);
-            itemView.setOnClickListener{onPokemonClicked?.invoke(model)}
-            Picasso.get().load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + model.number +".png").into(imageViewPoke)
+            itemView.setOnClickListener{
+                onPokemonClicked?.invoke(model)
+            }
+            Picasso.get()
+                    .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + model.number +".png")
+                    .into(imageViewPoke)
         }
     }
 

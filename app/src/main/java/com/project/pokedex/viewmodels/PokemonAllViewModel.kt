@@ -17,9 +17,15 @@ class PokemonAllViewModel : ViewModel() {
     private val _pokemonAllLiveData = MutableLiveData<List<PokeResult>>()
     val pokemonAllLiveData: LiveData<List<PokeResult>> = _pokemonAllLiveData
 
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> = _isLoading
+
+    private val _serverError = MutableLiveData<Boolean>()
+    val serverError: LiveData<Boolean> = _serverError
+
     fun getPokemonList( offset: Int = 0){
 
-        val call = retrofitProvider.getApiService().getPokemonList(10 , offset)
+        val call = retrofitProvider.getApiService().getPokemonList(11 , offset)
 
         call.enqueue(object: Callback<PokeApiResponse>{
             override fun onResponse(
@@ -33,6 +39,7 @@ class PokemonAllViewModel : ViewModel() {
                                 name = list.name,
                                 number = getNumber(list.url) ,
                                 url = list.url
+
                             )
                         }
                         _pokemonAllLiveData.postValue(pokemons)

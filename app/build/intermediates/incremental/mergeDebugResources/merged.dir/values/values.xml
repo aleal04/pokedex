@@ -405,12 +405,14 @@
     <color name="black">#FF000000</color>
     <color name="blue_poke_button">#3466AF</color>
     <color name="blue_pokedex">#56A7E0</color>
+    <color name="bottom_nav_view">#2D8FB3</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
     <color name="bright_foreground_inverse_material_light">@color/bright_foreground_material_dark</color>
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
+    <color name="button_disabled_gray">#7A7979</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="cardview_dark_background">#FF424242</color>
@@ -485,6 +487,8 @@
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
     <color name="notification_material_background_media_default_color">#ff424242</color>
+    <color name="poke_detail_gray">#CBCBCB</color>
+    <color name="pokemon_info">#E5E5E5</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -1069,8 +1073,11 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="abilities_pokeInfo">Abilities:</string>
+    <string name="about_pokeinfo">About</string>
     <string name="app_name">Pokedex</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="base_stats">Base Stats</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string description="A description of an action that a user of an accessibility service can perform to expand a bottomsheet halfway to its full height. [CHAR LIMIT=25]" name="bottomsheet_action_expand_halfway">Expand halfway</string>
     <string name="button_Ingresar">Ingresar</string>
@@ -1078,16 +1085,21 @@
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
     <string name="chip_text">Chip text</string>
+    <string name="choose_pokemon">Imagen de Pokémon elegido</string>
+    <string name="choose_trainer_gender">Género</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
+    <string name="contenct_image_pokemon_detail">image_pokemon_detail</string>
     <string name="content_descriptipn_poke_img">PokeImagen</string>
     <string name="content_image_female">ImageFemalePokeTrainer</string>
     <string name="content_image_male">ImageMalePokeTrainer</string>
     <string name="content_image_pokemon">ImagePokemon</string>
+    <string name="empty_poke_fav_list">No hay ningún pokémon favorito</string>
+    <string name="empty_poke_rec_list">No hay ningún pokémon que se haya consultado recientemente</string>
     <string name="error_icon_content_description">Error</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="height">Height</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string name="hint_entrenador">Entrenador</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
@@ -1145,6 +1157,7 @@
     <string description="a11y string to indicate this button switches the user to choosing a day [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_day_selection">Tap to switch to selecting a day</string>
     <string description="a11y string to indicate this button changes the input mode to a text field [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_text_input_mode">Switch to text input mode</string>
     <string description="a11y string to indicate this button switches the user to choosing a year [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_year_selection">Tap to switch to selecting a year</string>
+    <string name="n_pokeInfo">N°:</string>
     <string name="nav_app_bar_navigate_up_description">Navigate up</string>
     <string name="nav_app_bar_open_drawer_description">Open navigation drawer</string>
     <string name="password_toggle_content_description">Show password</string>
@@ -1152,10 +1165,13 @@
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
+    <string name="pokemon_add_favorites">¡Pokémon agregado como favorito!</string>
     <string name="radioButton_entrenador">Entrenador</string>
     <string name="radioButton_entrenadora">Entrenadora</string>
     <string name="search_menu_title">Search</string>
+    <string name="server_error_message">Se ha presentado un error</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="weight">Weight</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="AndroidThemeColorAccentYellow" ns2:ignore="NewApi">
@@ -3380,6 +3396,12 @@
     <style name="ShapeAppearanceOverlay.BottomRightCut">
     <item name="cornerFamilyBottomRight">cut</item>
   </style>
+    <style name="ShapeAppearanceOverlay.CardView" parent="">
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeBottomLeft">20%</item>
+        <item name="cornerSizeBottomRight">20%</item>
+    </style>
     <style name="ShapeAppearanceOverlay.Cut">
     <item name="cornerFamily">cut</item>
   </style>
@@ -6428,6 +6450,10 @@
         <!-- The height difference between the drawer and the base surface. Only takes effect on API 21 and above -->
         <attr name="elevation"/>
     </declare-styleable>
+    <declare-styleable name="EmptyListWidget">
+        <attr format="string" name="text_descritption"/>
+        <attr format="reference" name="image_description"/>
+    </declare-styleable>
     <declare-styleable name="ExtendedFloatingActionButton">
     <!-- Elevation for the ExtendedFloatingActionButton. -->
     <attr name="elevation"/>
@@ -7266,6 +7292,79 @@
         <!-- State identifier indicating the popup will be above the anchor. -->
         <attr format="boolean" name="state_above_anchor"/>
     </declare-styleable>
+    <declare-styleable name="ProgressView">
+    <!--  Default text of the progressbar label. -->
+    <attr format="string" name="progressView_labelText"/>
+    <!--  Text size of the progressbar label. -->
+    <attr format="dimension" name="progressView_labelSize"/>
+    <!--  Text color of the inside progressbar label. -->
+    <attr format="color" name="progressView_labelColorInner"/>
+    <!--  Text color of the outside progressbar label. -->
+    <attr format="color" name="progressView_labelColorOuter"/>
+    <!--  The space size of the between label and progress bar. -->
+    <attr format="dimension" name="progressView_labelSpace"/>
+    <!--  The typeface of the label. -->
+    <attr format="enum" name="progressView_labelTypeface">
+      <enum name="normal" value="0"/>
+      <enum name="bold" value="1"/>
+      <enum name="italic" value="2"/>
+    </attr>
+    <!--  The constraints of the label. -->
+    <attr format="enum" name="progressView_labelConstraints">
+      <enum name="align_progress" value="0"/>
+      <enum name="align_container" value="1"/>
+    </attr>
+    <!--  orientation of the progressView. -->
+    <attr format="enum" name="progressView_orientation">
+      <enum name="horizontal" value="0"/>
+      <enum name="vertical" value="1"/>
+    </attr>
+    <!-- 	Animation of the progressing animation. -->
+    <attr format="enum" name="progressView_animation">
+      <enum name="normal" value="0"/>
+      <enum name="bounce" value="1"/>
+      <enum name="decelerate" value="2"/>
+      <enum name="accelerateDecelerate" value="3"/>
+    </attr>
+    <!--  value of the minimum progress. The progress value can not under the min value. -->
+    <attr format="float" name="progressView_min"/>
+    <!--	value of the maximum progress. The progress value can not over the max value. -->
+    <attr format="float" name="progressView_max"/>
+    <!--  value of the progress. -->
+    <attr format="float" name="progressView_progress"/>
+    <!--  corner radius of the ProgressView. -->
+    <attr format="dimension" name="progressView_radius"/>
+    <!--  padding of the progressbar. -->
+    <attr format="dimension" name="progressView_padding"/>
+    <!--  duration of the animation. -->
+    <attr format="integer" name="progressView_duration"/>
+    <!--  color of the progressbar. -->
+    <attr format="color" name="progressView_colorProgress"/>
+    <!--  color of the container. -->
+    <attr format="color" name="progressView_colorBackground"/>
+    <!--	starting color of the gradient. -->
+    <attr format="color" name="progressView_colorGradientStart"/>
+    <!--	center color of the gradient. -->
+    <attr format="color" name="progressView_colorGradientCenter"/>
+    <!--	ending color of the gradient. -->
+    <attr format="color" name="progressView_colorGradientEnd"/>
+    <!--  starts filling animation automatically when finishing inflate. -->
+    <attr format="boolean" name="progressView_autoAnimate"/>
+    <!--  a border color of the progressbar container. -->
+    <attr format="color" name="progressView_borderColor"/>
+    <!--  a border size of the progressbar container. -->
+    <attr format="dimension" name="progressView_borderWidth"/>
+    <!--  highlights the progressbar when clicked. -->
+    <attr format="boolean" name="progressView_highlighting"/>
+    <!--  color of the highlighting effect. -->
+    <attr format="color" name="progressView_highlightColor"/>
+    <!-- 	alpha of the highlighting effect. -->
+    <attr format="float" name="progressView_highlightAlpha"/>
+    <!-- 	thickness of the highlighting effect. -->
+    <attr format="dimension" name="progressView_highlightWidth"/>
+    <!-- 	starts progress animation from the previous progressed value or not. -->
+    <attr format="boolean" name="progressView_progressFromPrevious"/>
+  </declare-styleable>
     <declare-styleable name="PropertySet"><attr name="android:visibility"/><attr name="visibilityMode"/><attr format="float" name="android:alpha"/><attr name="motionProgress"/><attr name="layout_constraintTag"/></declare-styleable>
     <declare-styleable name="RadialViewGroup">
 

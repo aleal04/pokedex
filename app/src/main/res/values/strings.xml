@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Pokedex</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="hint_entrenador">Entrenador</string>
     <string name="radioButton_entrenador">Entrenador</string>
     <string name="radioButton_entrenadora">Entrenadora</string>
@@ -13,4 +12,20 @@
     <string name="menu_recents">RECIENTES</string>
     <string name="menu_all">TODOS</string>
     <string name="content_descriptipn_poke_img">PokeImagen</string>
+    <string name="choose_pokemon">Imagen de Pokémon elegido</string>
+    <string name="abilities_pokeInfo">Abilities:</string>
+    <string name="n_pokeInfo">N°:</string>
+    <string name="about_pokeinfo">About</string>
+
+    <string name="contenct_image_pokemon_detail">image_pokemon_detail</string>
+
+    <string name="empty_poke_fav_list">No hay ningún pokémon favorito</string>
+    <string name="empty_poke_rec_list">No hay ningún pokémon que se haya consultado recientemente</string>
+
+    <string name="pokemon_add_favorites">¡Pokémon agregado como favorito!</string>
+    <string name="server_error_message">Se ha presentado un error</string>
+    <string name="base_stats">Base Stats</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="choose_trainer_gender">Género</string>
 </resources>

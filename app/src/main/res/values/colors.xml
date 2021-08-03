@@ -8,7 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red_pokedex">#DC0A2D</color>
+    <color name="bottom_nav_view">#2D8FB3</color>
     <color name="blue_pokedex">#56A7E0</color>
     <color name="blue_poke_button">#3466AF</color>
     <color name="yellow_poke_button">#FFCB05</color>
+    <color name="pokemon_info">#E5E5E5</color>
+    <color name="poke_detail_gray">#CBCBCB</color>
+    <color name="button_disabled_gray">#7A7979</color>
 </resources>

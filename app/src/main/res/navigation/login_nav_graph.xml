@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_nav_graph"
-    app:startDestination="@id/allFragment2">
+    app:startDestination="@id/trainerFragment">
 
     <fragment
         android:id="@+id/trainerFragment"
@@ -11,30 +11,12 @@
         android:label="fragment_trainer"
         tools:layout="@layout/fragment_trainer" >
         <action
-            android:id="@+id/action_trainerFragment_to_manageFragment"
-            app:destination="@id/manageFragment" />
+            android:id="@+id/action_trainerFragment_to_homePokemonFragment"
+            app:destination="@id/homePokemonFragment" />
     </fragment>
     <fragment
-        android:id="@+id/manageFragment"
-        android:name="com.project.pokedex.views.fragments.ManageFragment"
-        android:label="fragment_manage"
-        tools:layout="@layout/fragment_manage" />
-    <fragment
-        android:id="@+id/allFragment2"
-        android:name="com.project.pokedex.views.fragments.AllFragment"
-        android:label="fragment_all"
-        tools:layout="@layout/fragment_all" >
-        <action
-            android:id="@+id/action_allFragment2_to_pokemonDetailFragment2"
-            app:destination="@id/pokemonDetailFragment2" />
-    </fragment>
-    <fragment
-        android:id="@+id/pokemonDetailFragment2"
-        android:name="com.project.pokedex.views.fragments.PokemonDetailFragment"
-        android:label="fragment_pokemon_detail"
-        tools:layout="@layout/fragment_pokemon_detail" >
-        <argument
-            android:name="pokemon_selected"
-            app:argType="com.project.pokedex.network.models.PokeResult" />
-    </fragment>
+        android:id="@+id/homePokemonFragment"
+        android:name="com.project.pokedex.views.fragments.HomePokemonFragment"
+        android:label="fragment_home_pokemon"
+        tools:layout="@layout/fragment_home_pokemon" />
 </navigation>

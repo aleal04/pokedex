@@ -20,7 +20,7 @@ class FavoritesPokemonAdapter: RecyclerView.Adapter<FavoritesPokemonAdapter.Favo
 
     inner class FavoritesPokemonViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private var namePokeTextView: TextView = itemView.findViewById(R.id.textViewCellPokeNameFav)
-        private var typePokeTextView: TextView = itemView.findViewById(R.id.textViewCellPokeDescFav)
+        //private var typePokeTextView: TextView = itemView.findViewById(R.id.textViewCellPokeDescFav)
         private var imageViewPoke : ImageView = itemView.findViewById(R.id.imageViewCellPokeFav)
 
 
