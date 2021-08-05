@@ -9,7 +9,7 @@ import com.project.pokedex.databinding.ItemFavoriteCellBinding
 import com.project.pokedex.db.entity.PokeFavorite
 import com.squareup.picasso.Picasso
 
-class PokemonFavoritesAdapter(val onPokemonClicked: ((Int) -> Unit)) : RecyclerView.Adapter<PokemonFavoritesAdapter.PokemonListViewHolder>() {
+class PokemonFavoritesAdapter(val onPokemonDelete: ((Int) -> (Unit)), val onPokemonDetail: ((Int) -> (Unit))) : RecyclerView.Adapter<PokemonFavoritesAdapter.PokemonListViewHolder>() {
     var pokeList: List<PokeFavorite> = emptyList()
 
         set(value) {
@@ -25,7 +25,11 @@ class PokemonFavoritesAdapter(val onPokemonClicked: ((Int) -> Unit)) : RecyclerV
             Picasso.get().load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + model.pokeNumber +".png").into(binding.imageViewCellPokeFav)
 
             binding.imageButtonPokeFavorite.setOnClickListener {
-                onPokemonClicked.invoke(model.pokeNumber)
+                onPokemonDelete.invoke(model.pokeNumber)
+            }
+
+            binding.imageViewCellPokeFav.setOnClickListener{
+                onPokemonDetail?.invoke(model.pokeNumber)
             }
         }
     }

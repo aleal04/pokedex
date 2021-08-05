@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.jakewharton.rxbinding4.view.visibility
 import com.project.pokedex.R
@@ -27,9 +28,15 @@ class PokemonFavoritesFragment : Fragment(){
     private lateinit var viewModel: ListPokemonFavoritesViewModel
 
 
-    private val adapter = PokemonFavoritesAdapter { pokemonListFav ->
+    private val adapter = PokemonFavoritesAdapter({ viewModel.deletePokeFavorites(it) },{ findNavController().navigate(PokemonFavoritesFragmentDirections.actionPokemonFavoritesFragmentToPokemonDetailFragment(it)) })
+
+    /*
+    * private val adapter = PokemonFavoritesAdapter { pokemonListFav ->
         viewModel.deletePokeFavorites(pokemonListFav.toInt())
     }
+    *
+    *
+    * */
 
     override fun onCreateView(
         inflater: LayoutInflater,

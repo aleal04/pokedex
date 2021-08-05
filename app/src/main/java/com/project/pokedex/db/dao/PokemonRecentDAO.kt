@@ -17,7 +17,7 @@ interface PokemonRecentDAO {
     @Query("SELECT * FROM PokeRecent WHERE trainer = :trainer")
     fun getPokemonRecents(trainer: String): LiveData<List<PokeRecent>>
 
-    @Query("DELETE FROM PokeRecent")
-    suspend fun deletePokemonRecents()
+    @Query("DELETE FROM PokeRecent WHERE trainer = :trainer")
+    suspend fun deletePokemonRecents(trainer: String)
 
 }

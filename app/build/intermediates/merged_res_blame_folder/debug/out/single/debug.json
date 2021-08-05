@@ -52,10 +52,6 @@
         "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\item_favorite_cell.xml"
     },
     {
-        "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_favorites.xml.flat",
-        "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\fragment_favorites.xml"
-    },
-    {
         "merged": "D:\\Android Studio Projects\\Proyecto\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_pokemon_favorites.xml.flat",
         "source": "D:\\Android Studio Projects\\Proyecto\\app\\src\\main\\res\\layout\\fragment_pokemon_favorites.xml"
     },

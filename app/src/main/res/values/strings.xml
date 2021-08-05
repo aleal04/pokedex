@@ -13,7 +13,7 @@
     <string name="menu_all">TODOS</string>
     <string name="content_descriptipn_poke_img">PokeImagen</string>
     <string name="choose_pokemon">Imagen de Pokémon elegido</string>
-    <string name="abilities_pokeInfo">Abilities:</string>
+    <string name="abilities_pokeInfo">Abilities</string>
     <string name="n_pokeInfo">N°:</string>
     <string name="about_pokeinfo">About</string>
 
@@ -28,4 +28,5 @@
     <string name="height">Height</string>
     <string name="weight">Weight</string>
     <string name="choose_trainer_gender">Género</string>
+    <string name="contect_desc_image_button">Image button favorite</string>
 </resources>

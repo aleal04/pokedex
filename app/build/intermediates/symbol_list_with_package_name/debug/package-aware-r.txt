@@ -1792,6 +1792,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id abilitiesRecyclerView
 id accelerate
 id accelerateDecelerate
 id accessibility_action_clickable_span
@@ -1844,7 +1845,9 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_pokemonFavoritesFragment_to_pokemonDetailFragment
 id action_pokemonListFragment_to_pokemonDetailFragment
+id action_pokemonRecentFragment_to_pokemonDetailFragment
 id action_text
 id action_trainerFragment_to_homePokemonFragment
 id actions
@@ -1878,7 +1881,7 @@ id cache_measures
 id cancel_action
 id cancel_button
 id cardView
-id cardView2
+id cardViewButtonEntry
 id cardViewContainerImageRec
 id cardViewitemListRec
 id center
@@ -1979,7 +1982,7 @@ id group_divider
 id grouping
 id groups
 id guideline
-id header
+id headerPokemon
 id header_title
 id hideable
 id home
@@ -2017,7 +2020,6 @@ id leftToRight
 id line1
 id line3
 id linear
-id linearLayout
 id linearLayoutHorizontalContainerRec
 id linearLayoutTypes
 id listMode
@@ -2119,8 +2121,6 @@ id progressBarStats
 id progress_circular
 id progress_horizontal
 id radio
-id radioButtonEntrenador
-id radioButtonEntrenadora
 id ratio
 id rectangles
 id recyclerViewAll
@@ -2217,8 +2217,8 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id textView11
+id textView4
 id textViewAbilities
 id textViewCellPokeNameAll
 id textViewCellPokeNameFav
@@ -2229,6 +2229,7 @@ id textViewCellPokeNumberRec
 id textViewHeightTitle
 id textViewPokeDetailHeight
 id textViewPokeDetailName
+id textViewPokeDetailNumber
 id textViewPokeDetailType1
 id textViewPokeDetailType2
 id textViewPokeDetailWeight
@@ -2358,7 +2359,6 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout empty_list_widget
-layout fragment_favorites
 layout fragment_home_pokemon
 layout fragment_pokemon_detail
 layout fragment_pokemon_favorites
@@ -2492,6 +2492,7 @@ string chip_text
 string choose_pokemon
 string choose_trainer_gender
 string clear_text_end_icon_content_description
+string contect_desc_image_button
 string contenct_image_pokemon_detail
 string content_descriptipn_poke_img
 string content_image_female

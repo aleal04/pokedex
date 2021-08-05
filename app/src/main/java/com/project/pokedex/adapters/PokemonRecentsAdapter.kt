@@ -7,7 +7,7 @@ import com.project.pokedex.databinding.ItemRecentCellBinding
 import com.project.pokedex.db.entity.PokeRecent
 import com.squareup.picasso.Picasso
 
-class PokemonRecentsAdapter : RecyclerView.Adapter<PokemonRecentsAdapter.PokemonPokemonRecentViewHolder>() {
+class PokemonRecentsAdapter(val onPokemonDetail: ((Int) -> (Unit))? = null): RecyclerView.Adapter<PokemonRecentsAdapter.PokemonPokemonRecentViewHolder>() {
     var pokeRecentList: List<PokeRecent> = emptyList()
 
         set(value) {
@@ -21,6 +21,10 @@ class PokemonRecentsAdapter : RecyclerView.Adapter<PokemonRecentsAdapter.Pokemon
             binding.textViewCellPokeNameRec.text = model.pokeName.replaceFirstChar { it.uppercase() }
             binding.textViewCellPokeNumberRec.text = "N.° " + String.format("%04d", model.pokeNumber);
             Picasso.get().load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + model.pokeNumber +".png").into(binding.imageViewCellPokeRec)
+
+            binding.imageViewCellPokeRec.setOnClickListener{
+                onPokemonDetail?.invoke(model.pokeNumber)
+            }
         }
     }
 

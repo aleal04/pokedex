@@ -25,7 +25,7 @@ class PokemonAllViewModel : ViewModel() {
 
     fun getPokemonList( offset: Int = 0){
 
-        val call = retrofitProvider.getApiService().getPokemonList(11 , offset)
+        val call = retrofitProvider.getApiService().getPokemonList(15 , offset)
 
         call.enqueue(object: Callback<PokeApiResponse>{
             override fun onResponse(
@@ -50,7 +50,6 @@ class PokemonAllViewModel : ViewModel() {
             override fun onFailure(call: Call<PokeApiResponse>, t: Throwable) {
                 call.cancel()
             }
-
         })
     }
 
@@ -58,7 +57,4 @@ class PokemonAllViewModel : ViewModel() {
         val urlSplit: List<String> = urlParts.split("/")
         return urlSplit[6].toInt()
     }
-
-
-
 }

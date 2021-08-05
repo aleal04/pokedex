@@ -1,11 +1,8 @@
 package com.project.pokedex.views.fragments;
 
 import android.os.Bundle;
-import android.os.Parcelable;
 import androidx.annotation.NonNull;
 import androidx.navigation.NavArgs;
-import com.project.pokedex.network.models.PokeResult;
-import java.io.Serializable;
 import java.lang.IllegalArgumentException;
 import java.lang.Object;
 import java.lang.Override;
@@ -29,42 +26,28 @@ public class PokemonDetailFragmentArgs implements NavArgs {
   public static PokemonDetailFragmentArgs fromBundle(@NonNull Bundle bundle) {
     PokemonDetailFragmentArgs __result = new PokemonDetailFragmentArgs();
     bundle.setClassLoader(PokemonDetailFragmentArgs.class.getClassLoader());
-    if (bundle.containsKey("pokemon_selected")) {
-      PokeResult pokemonSelected;
-      if (Parcelable.class.isAssignableFrom(PokeResult.class) || Serializable.class.isAssignableFrom(PokeResult.class)) {
-        pokemonSelected = (PokeResult) bundle.get("pokemon_selected");
-      } else {
-        throw new UnsupportedOperationException(PokeResult.class.getName() + " must implement Parcelable or Serializable or must be an Enum.");
-      }
-      if (pokemonSelected == null) {
-        throw new IllegalArgumentException("Argument \"pokemon_selected\" is marked as non-null but was passed a null value.");
-      }
-      __result.arguments.put("pokemon_selected", pokemonSelected);
+    if (bundle.containsKey("pokemon_ID")) {
+      int pokemonID;
+      pokemonID = bundle.getInt("pokemon_ID");
+      __result.arguments.put("pokemon_ID", pokemonID);
     } else {
-      throw new IllegalArgumentException("Required argument \"pokemon_selected\" is missing and does not have an android:defaultValue");
+      throw new IllegalArgumentException("Required argument \"pokemon_ID\" is missing and does not have an android:defaultValue");
     }
     return __result;
   }
 
   @SuppressWarnings("unchecked")
-  @NonNull
-  public PokeResult getPokemonSelected() {
-    return (PokeResult) arguments.get("pokemon_selected");
+  public int getPokemonID() {
+    return (int) arguments.get("pokemon_ID");
   }
 
   @SuppressWarnings("unchecked")
   @NonNull
   public Bundle toBundle() {
     Bundle __result = new Bundle();
-    if (arguments.containsKey("pokemon_selected")) {
-      PokeResult pokemonSelected = (PokeResult) arguments.get("pokemon_selected");
-      if (Parcelable.class.isAssignableFrom(PokeResult.class) || pokemonSelected == null) {
-        __result.putParcelable("pokemon_selected", Parcelable.class.cast(pokemonSelected));
-      } else if (Serializable.class.isAssignableFrom(PokeResult.class)) {
-        __result.putSerializable("pokemon_selected", Serializable.class.cast(pokemonSelected));
-      } else {
-        throw new UnsupportedOperationException(PokeResult.class.getName() + " must implement Parcelable or Serializable or must be an Enum.");
-      }
+    if (arguments.containsKey("pokemon_ID")) {
+      int pokemonID = (int) arguments.get("pokemon_ID");
+      __result.putInt("pokemon_ID", pokemonID);
     }
     return __result;
   }
@@ -78,10 +61,10 @@ public class PokemonDetailFragmentArgs implements NavArgs {
         return false;
     }
     PokemonDetailFragmentArgs that = (PokemonDetailFragmentArgs) object;
-    if (arguments.containsKey("pokemon_selected") != that.arguments.containsKey("pokemon_selected")) {
+    if (arguments.containsKey("pokemon_ID") != that.arguments.containsKey("pokemon_ID")) {
       return false;
     }
-    if (getPokemonSelected() != null ? !getPokemonSelected().equals(that.getPokemonSelected()) : that.getPokemonSelected() != null) {
+    if (getPokemonID() != that.getPokemonID()) {
       return false;
     }
     return true;
@@ -90,14 +73,14 @@ public class PokemonDetailFragmentArgs implements NavArgs {
   @Override
   public int hashCode() {
     int result = 1;
-    result = 31 * result + (getPokemonSelected() != null ? getPokemonSelected().hashCode() : 0);
+    result = 31 * result + getPokemonID();
     return result;
   }
 
   @Override
   public String toString() {
     return "PokemonDetailFragmentArgs{"
-        + "pokemonSelected=" + getPokemonSelected()
+        + "pokemonID=" + getPokemonID()
         + "}";
   }
 
@@ -110,11 +93,8 @@ public class PokemonDetailFragmentArgs implements NavArgs {
     }
 
     @SuppressWarnings("unchecked")
-    public Builder(@NonNull PokeResult pokemonSelected) {
-      if (pokemonSelected == null) {
-        throw new IllegalArgumentException("Argument \"pokemon_selected\" is marked as non-null but was passed a null value.");
-      }
-      this.arguments.put("pokemon_selected", pokemonSelected);
+    public Builder(int pokemonID) {
+      this.arguments.put("pokemon_ID", pokemonID);
     }
 
     @NonNull
@@ -125,18 +105,14 @@ public class PokemonDetailFragmentArgs implements NavArgs {
 
     @NonNull
     @SuppressWarnings("unchecked")
-    public Builder setPokemonSelected(@NonNull PokeResult pokemonSelected) {
-      if (pokemonSelected == null) {
-        throw new IllegalArgumentException("Argument \"pokemon_selected\" is marked as non-null but was passed a null value.");
-      }
-      this.arguments.put("pokemon_selected", pokemonSelected);
+    public Builder setPokemonID(int pokemonID) {
+      this.arguments.put("pokemon_ID", pokemonID);
       return this;
     }
 
     @SuppressWarnings("unchecked")
-    @NonNull
-    public PokeResult getPokemonSelected() {
-      return (PokeResult) arguments.get("pokemon_selected");
+    public int getPokemonID() {
+      return (int) arguments.get("pokemon_ID");
     }
   }
 }

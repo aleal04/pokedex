@@ -3,6 +3,7 @@ package com.project.pokedex.views.fragments
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import com.project.pokedex.R
@@ -10,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.snackbar.Snackbar
 import com.project.pokedex.adapters.PokemonListAdapter
 import com.project.pokedex.viewmodels.PokemonAllViewModel
@@ -42,7 +42,6 @@ class PokemonListFragment : Fragment(R.layout.fragment_pokemon_list) {
         progressBarLoading = view.findViewById(R.id.progressBarPokemonList)
 
         allRecyclerView = view.findViewById(R.id.recyclerViewAll)
-        allRecyclerView.addItemDecoration(DividerItemDecoration(requireContext() , DividerItemDecoration.VERTICAL))
         allRecyclerView.adapter = adapter
 
         viewModel.getPokemonList(offset)
@@ -59,26 +58,35 @@ class PokemonListFragment : Fragment(R.layout.fragment_pokemon_list) {
             Snackbar.make(view, requireContext().getString(R.string.server_error_message), Snackbar.LENGTH_LONG).show()
         }
 
-        /*allRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+
+
+       allRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+
+           override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+               super.onScrollStateChanged(recyclerView, newState)
+               if(!allRecyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE){
+                   Log.e("Final" , "END OF RECYCLER VIEW")
+
+                   offset += 15
+                   viewModel.getPokemonList(offset)
+               }
+           }
+
+            /*override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 if(dy > 0){
                     val visibleItemCount : Int=  (allRecyclerView.layoutManager as LinearLayoutManager).childCount
                     val totalItemCount : Int= (allRecyclerView.layoutManager as LinearLayoutManager).itemCount
                     val pastVisibleItem : Int = (allRecyclerView.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
 
                     if((visibleItemCount + pastVisibleItem) >= totalItemCount){
-                        Log.v("Final" , pastVisibleItem.toString())
-                        //offset += 10
-                        //viewModel.getPokemonList(offset)
+                        offset += 10
+                        viewModel.getPokemonList(offset)
                     }
                 }
                 super.onScrolled(recyclerView, dx, dy)
-            }
-        })*/
-    }
+            }*/
 
-    override fun onResume() {
-        super.onResume()
-        val pokeTrainer = sharedPref.getString("TRAINER_NAME", "") ?: ""
+
+        })
     }
 }

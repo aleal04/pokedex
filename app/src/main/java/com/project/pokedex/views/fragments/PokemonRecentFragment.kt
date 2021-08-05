@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.project.pokedex.R
@@ -18,15 +19,21 @@ import com.project.pokedex.viewmodels.ListPokemonRecentViewModel
 
 class PokemonRecentFragment : Fragment(R.layout.fragment_pokemon_recent) {
 
-    private val adapter = PokemonRecentsAdapter()
+
     private lateinit var recentsRecyclerView: RecyclerView
     /*View Binding*/
     private var _binding: FragmentPokemonRecentBinding? = null
     private val binding get() = _binding!!
     /*View Model*/
     private lateinit var viewModel: ListPokemonRecentViewModel
-
+    /*Shared Preferences*/
     private lateinit var sharedPref: SharedPreferences
+    /*Adapter*/
+    private val adapter = PokemonRecentsAdapter(){
+        val action = PokemonRecentFragmentDirections.actionPokemonRecentFragmentToPokemonDetailFragment(it)
+        findNavController().navigate(action)
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

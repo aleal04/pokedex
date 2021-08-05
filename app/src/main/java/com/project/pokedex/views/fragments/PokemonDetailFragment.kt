@@ -2,30 +2,34 @@ package com.project.pokedex.views.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.ColorRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.project.pokedex.R
+import com.project.pokedex.adapters.PokemonDetailAbilitiesAdapter
+import com.project.pokedex.adapters.PokemonDetailStatsAdapter
 import com.project.pokedex.databinding.FragmentPokemonDetailBinding
 import com.project.pokedex.viewmodels.PokemonInfoViewModel
 import com.project.pokedex.viewmodels.StorePokemonFavoriteViewModel
 import com.project.pokedex.viewmodels.StorePokemonRecentViewModel
-import com.project.pokedex.views.adapters.PokemonDetailAdapter
-import com.project.pokedex.views.adapters.PokemonDetailStatsAdapter
+
 
 class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail){
     /*Safe Args*/
     private val args: PokemonDetailFragmentArgs by navArgs()
     /*Adapter*/
-    private val adapter = PokemonDetailAdapter()
+    private val adapter = PokemonDetailAbilitiesAdapter()
     private val adapterStat = PokemonDetailStatsAdapter()
     /*View Model*/
     private lateinit var viewModel: PokemonInfoViewModel
@@ -61,12 +65,12 @@ class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail){
         super.onViewCreated(view, savedInstanceState)
         val pokeTrainer = sharedPref.getString("TRAINER_NAME", "") ?: ""
 
-        viewModel.getPokemonDetail(args.pokemonSelected.number)
+        viewModel.getPokemonDetail(args.pokemonID)
 
-        //abilitiesRecyclerView = view.findViewById(R.id.recyclerViewAbilities)
-        //abilitiesRecyclerView.adapter = adapter
+        abilitiesRecyclerView = binding.abilitiesRecyclerView
+        abilitiesRecyclerView.adapter = adapter
 
-        statsRecyclerView = view.findViewById(R.id.recyclerViewStats)
+        statsRecyclerView =  binding.recyclerViewStats
         statsRecyclerView.adapter = adapterStat
 
         viewModel.pokemonInfo.observe(viewLifecycleOwner) { list ->
@@ -80,13 +84,14 @@ class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail){
             binding.textViewPokeDetailName.text = pokemon.name.replaceFirstChar { it.uppercase() }
             Glide.with(this).load(pokemon.sprites.front_default).into(binding.imageViewPokeDetailSprite)
             binding.textViewPokeDetailType1.text = pokemon.types[0].type.name.replaceFirstChar { it.uppercase() }
-
-            //binding.textViewPokeDetailNumber.text = "# " + String.format("%04d", pokemon.id);
-            //SetBackGroundColorByType(pokemon.types[0].type.name.replaceFirstChar { it.uppercase() })
+            binding.textViewPokeDetailNumber.text = "# " + String.format("%04d", pokemon.id);
+            binding.textViewPokeDetailType1.setBackgroundColor(Color.parseColor(BackGroundColorByType(pokemon.types[0].type.name.replaceFirstChar { it.uppercase() })))
+            binding.headerPokemon.setBackgroundColor(Color.parseColor(BackGroundColorByType(pokemon.types[0].type.name.replaceFirstChar { it.uppercase() })))
 
             if(pokemon.types.size > 1){
                 binding.textViewPokeDetailType2.visibility = View.VISIBLE
                 binding.textViewPokeDetailType2.text = pokemon.types[1].type.name.replaceFirstChar { it.uppercase() }
+                binding.textViewPokeDetailType2.setBackgroundColor(Color.parseColor(BackGroundColorByType(pokemon.types[1].type.name.replaceFirstChar { it.uppercase() })))
             }
             else{
                 binding.textViewPokeDetailType2.visibility = View.GONE
@@ -97,10 +102,9 @@ class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail){
                 binding.iamgeButtonAddFavorite.setImageResource(R.drawable.star_on)
 
                 val snackbar: Snackbar = Snackbar.make(view, requireContext().getString(R.string.pokemon_add_favorites), Snackbar.LENGTH_LONG);
-                snackbar.setAnchorView(view.findViewById(R.id.pokeBottomNavigationView))
+                snackbar.anchorView = view.findViewById(R.id.pokeBottomNavigationView)
                 snackbar.show()
             }
-
             viewModelRecent.insert(pokemon.id , pokemon.name , pokeTrainer)
         })
 
@@ -119,61 +123,66 @@ class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail){
     }
 
 
-    /*
-    fun SetBackGroundColorByType(type: String = "Fire"){
-        if(type == "Fire"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#EA7A3C"))
+
+    private fun BackGroundColorByType(type: String = "Fire"): String{
+        var color: String = "#EA7A3C"
+        when (type) {
+            "Fire" -> {
+                color = "#EA7A3C"
+            }
+            "Water" -> {
+                color =  "#539AE2"
+            }
+            "Steel" -> {
+                color =  "#539AE2"
+            }
+            "Rock" -> {
+                color =  "#B2A061"
+            }
+            "Psychic" -> {
+                color =  "#E5709B"
+            }
+            "Poison" -> {
+                color =  "#B468B7"
+            }
+            "Normal" -> {
+                color =  "#AAB09F"
+            }
+            "Ice" -> {
+                color =  "#70CBD4"
+            }
+            "Ground" -> {
+                color =  "#CC9F4F"
+            }
+            "Grass" -> {
+                color =  "#71C558"
+            }
+            "Ghost" -> {
+                color =  "#846AB6"
+            }
+            "Flying" -> {
+                color =  "#7DA6DE"
+            }
+            "Fighting" -> {
+                color =  "#CB5F48"
+            }
+            "Fairy" -> {
+                color =  "#E397D1"
+            }
+            "Electric" -> {
+                color =  "#E5C531"
+            }
+            "Dragon" -> {
+                color =  "#6A7BAF"
+            }
+            "Dark" -> {
+                color =  "#736C75"
+            }
+            "Bug" -> {
+                color =  "#94BC4A"
+            }
         }
-        else if(type == "Water"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#539AE2"))
-        }
-        else if(type == "Steel"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#539AE2"))
-        }
-        else if(type == "Rock"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#B2A061"))
-        }
-        else if(type == "Psychic"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#E5709B"))
-        }
-        else if(type == "Poison"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#B468B7"))
-        }
-        else if(type == "Normal"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#AAB09F"))
-        }
-        else if(type == "Ice"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#70CBD4"))
-        }
-        else if(type == "Ground"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#CC9F4F"))
-        }
-        else if(type == "Grass"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#71C558"))
-        }
-        else if(type == "Ghost"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#846AB6"))
-        }
-        else if(type == "Flying"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#7DA6DE"))
-        }
-        else if(type == "Fighting"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#CB5F48"))
-        }
-        else if(type == "Fairy"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#E397D1"))
-        }
-        else if(type == "Electric"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#E5C531"))
-        }
-        else if(type == "Dragon"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#6A7BAF"))
-        }
-        else if(type == "Dark"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#736C75"))
-        }
-        else if(type == "Bug"){
-            binding.cardViewPokeImage.setBackgroundColor(Color.parseColor("#94BC4A"))
-        }
-    }*/
+
+        return color
+    }
 }

@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.project.pokedex.databinding.ItemAllCellBinding
 import com.project.pokedex.network.models.PokeResult
 import com.squareup.picasso.Picasso
+import java.util.ArrayList
 
-class PokemonListAdapter(val onPokemonClicked: ((PokeResult) -> (Unit))? = null): RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>() {
-    var pokeList: List<PokeResult> = emptyList()
+class PokemonListAdapter(val onPokemonDetail: ((Int) -> (Unit))? = null): RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>() {
+    var pokeList: List<PokeResult> = ArrayList()
+
+    //var pokeList = emptyList<PokeResult>()
 
     fun setData(list: List<PokeResult>){
         pokeList = list
@@ -23,8 +26,9 @@ class PokemonListAdapter(val onPokemonClicked: ((PokeResult) -> (Unit))? = null)
             binding.textViewCellPokeNumberAll.text = "N.° " + String.format("%04d", model.number);
             Picasso.get().load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + model.number +".png").into(binding.imageViewCellPokeAll)
 
-            itemView.setOnClickListener{
-                onPokemonClicked?.invoke(model)
+
+            binding.imageViewCellPokeAll.setOnClickListener{
+                onPokemonDetail?.invoke(model.number)
             }
         }
     }

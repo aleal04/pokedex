@@ -16,8 +16,8 @@ class PokemonRecentsRepository (private val pokemonRecDao: PokemonRecentDAO) {
     }
 
     @WorkerThread
-    suspend fun delete(){
-        pokemonRecDao.deletePokemonRecents()
+    suspend fun delete(trainer: String){
+        pokemonRecDao.deletePokemonRecents(trainer)
     }
 
 }

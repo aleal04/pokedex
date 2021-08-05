@@ -11,8 +11,8 @@
         android:label="fragment_pokemon_detail"
         tools:layout="@layout/fragment_pokemon_detail" >
         <argument
-            android:name="pokemon_selected"
-            app:argType="com.project.pokedex.network.models.PokeResult" />
+            android:name="pokemon_ID"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/pokemonListFragment"
@@ -21,16 +21,36 @@
         tools:layout="@layout/fragment_pokemon_list" >
         <action
             android:id="@+id/action_pokemonListFragment_to_pokemonDetailFragment"
-            app:destination="@id/pokemonDetailFragment" />
+            app:destination="@id/pokemonDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/pokemonRecentFragment"
         android:name="com.project.pokedex.views.fragments.PokemonRecentFragment"
         android:label="fragment_pokemon_recent"
-        tools:layout="@layout/fragment_pokemon_recent" />
+        tools:layout="@layout/fragment_pokemon_recent" >
+        <action
+            android:id="@+id/action_pokemonRecentFragment_to_pokemonDetailFragment"
+            app:destination="@id/pokemonDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
     <fragment
         android:id="@+id/pokemonFavoritesFragment"
         android:name="com.project.pokedex.views.fragments.PokemonFavoritesFragment"
         android:label="fragment_pokemon_favorites"
-        tools:layout="@layout/fragment_pokemon_favorites" />
+        tools:layout="@layout/fragment_pokemon_favorites" >
+        <action
+            android:id="@+id/action_pokemonFavoritesFragment_to_pokemonDetailFragment"
+            app:destination="@id/pokemonDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
 </navigation>
